@@ -55,10 +55,10 @@ export const getWordOfDay = () => {
   // January 1, 2022 Game Epoch
   const epochMs = new Date('January 1, 2022 00:00:00').valueOf()
   const now = Date.now()
-  //const msInDay = 86400000
-  const msInDay = 170000
+  const msInDay = 86400000
   const index = Math.floor((now - epochMs) / msInDay)
-  const nextday = (index + 1) * msInDay + epochMs
+  //const nextday = (index + 1) * msInDay + epochMs
+  const nextday = 10
 
   return {
     solution: WORDS[index % WORDS.length].toUpperCase(),
