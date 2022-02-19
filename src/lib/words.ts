@@ -58,10 +58,13 @@ export const getWordOfDay = () => {
   const msInDay = 86400000
   const index = Math.floor((now - epochMs) / msInDay)
   //const nextday = (index + 1) * msInDay + epochMs
-  const nextday = 0.1
-
+  //const nextday = now + msInDay/(24 * 60)
+  const nextday = now
+  const choice = Math.floor(Math.random() * WORDS.length);
+  
   return {
-    solution: WORDS[index % WORDS.length].toUpperCase(),
+    //solution: WORDS[index % WORDS.length].toUpperCase(),
+    solution: WORDS[choice].toUpperCase(),
     solutionIndex: index,
     tomorrow: nextday,
   }

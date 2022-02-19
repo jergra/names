@@ -492,7 +492,7 @@ export const WORDS = [
   "zayne"
 ]
 
-export const WORDShard = [
+export const WORDSharder = [
   "aaron",
   "abbey",
   "abbie",
