@@ -51,23 +51,25 @@ export const StatsModal = ({
       handleClose={handleClose}
     >
       <StatBar gameStats={gameStats} />
-      <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+      <h4 className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
         {GUESS_DISTRIBUTION_TEXT}
       </h4>
       <Histogram gameStats={gameStats} />
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
-            <h5>{NEW_WORD_TEXT}</h5>
+            <h5 className="invisible">{NEW_WORD_TEXT}</h5>
             <Countdown
-              className="text-lg font-medium text-gray-900 dark:text-gray-100"
+              className="invisible text-lg font-medium text-gray-900 dark:text-gray-100"
               date={tomorrow}
               daysInHours={true}
             />
           </div>
+          <div>
           <button
             type="button"
-            className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+            className="w-full px-4 py-2 mt-2 ml-[-10px] text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+            // mr-[20px] 
             onClick={() => {
               shareStatus(guesses, isGameLost, isHardMode)
               handleShare()
@@ -75,6 +77,7 @@ export const StatsModal = ({
           >
             {SHARE_TEXT}
           </button>
+          </div>
         </div>
       )}
     </BaseModal>
